@@ -10,7 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import br.com.integra.api.enums.UsuarioTipo;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -41,16 +40,11 @@ public class Usuario {
 	@Column(name="senha")
 	private String senha;
 	
-	@Column(name="tipo")
-	private UsuarioTipo tipo;
-	
 	@Column(name="ativo")
 	private Integer ativo;
 	
 	@Column(name="dataDeCriacao")
 	private Date dataDeCriacao;
-	
-	//@ManyToOne
-	//private Long clientId;
+
 
 }
