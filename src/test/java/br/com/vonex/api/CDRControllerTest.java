@@ -16,10 +16,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
-import br.com.vonex.api.exception.EntidadeNaoEncontradaException;
-import br.com.vonex.api.model.CDR;
-import br.com.vonex.api.repository.CDRRepository;
-import br.com.vonex.api.service.CDRService;
+import br.com.integra.api.exception.EntidadeNaoEncontradaException;
+import br.com.integra.api.model.CDR;
+import br.com.integra.api.repository.CDRRepository;
+import br.com.integra.api.service.CDRService;
 
 
 @RunWith(SpringRunner.class)

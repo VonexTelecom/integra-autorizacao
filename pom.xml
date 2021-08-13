@@ -9,11 +9,11 @@
 		<version>2.5.2</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>br.com.vonex</groupId>
-	<artifactId>api.reference</artifactId>
+	<groupId>br.com.integra</groupId>
+	<artifactId>api.autorizacao</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>api.reference</name>
-	<description>Aplicação Referência</description>
+	<name>integra-autorizacao</name>
+	<description>API para Autorização</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
