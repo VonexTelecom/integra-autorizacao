@@ -1,3 +1,3 @@
-# integra-autorizacao
 
-Serviço de autenticação/autorização do Integra.
+Specification com annotaion
+https://github.com/tkaczmarzyk/specification-arg-resolver
