@@ -2,12 +2,17 @@ package br.com.integra.api.model;
 
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -40,11 +45,14 @@ public class Usuario {
 	@Column(name="senha")
 	private String senha;
 	
-	@Column(name="ativo")
-	private Integer ativo;
+	@Column(name="tipo")
+	private Integer tipo;
 	
-	@Column(name="dataDeCriacao")
+	@Column(name="data_criacao")
 	private Date dataDeCriacao;
 
-
+	@ManyToMany
+	@JoinTable(name = "Usuario_Grupo", joinColumns = @JoinColumn(name = "usuario_id"),
+			inverseJoinColumns = @JoinColumn(name = "grupo_id"))
+	private Set<Grupo> grupos = new HashSet<>();
 }

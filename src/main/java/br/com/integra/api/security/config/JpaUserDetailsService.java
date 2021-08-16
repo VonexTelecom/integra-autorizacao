@@ -29,16 +29,16 @@ public class JpaUserDetailsService implements UserDetailsService {
 		Usuario usuario = usuarioRepository.findByUsuario(username)
 				.orElseThrow(() -> new UsernameNotFoundException("Usuário não encontrado com e-mail informado"));
 		
-		//return new AuthUser(usuario, getAuthorities(usuario));
-		return new AuthUser(usuario, null);
+		return new AuthUser(usuario, getAuthorities(usuario));
+	
 	}
 	
-//	private Collection<GrantedAuthority> getAuthorities(Usuario usuario) {
-//		
-//		return usuario.getGrupos().stream()
-//				.flatMap(grupo -> grupo.getPermissoes().stream())
-//				.map(permissao -> new SimpleGrantedAuthority(permissao.getNome().toUpperCase()))
-//				.collect(Collectors.toSet());
-//	}
+	private Collection<GrantedAuthority> getAuthorities(Usuario usuario) {
+		
+		return usuario.getGrupos().stream()
+				.flatMap(grupo -> grupo.getPermissoes().stream())
+				.map(permissao -> new SimpleGrantedAuthority(permissao.getNome().toUpperCase()))
+				.collect(Collectors.toSet());
+	}
 
 }

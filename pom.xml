@@ -10,7 +10,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.com.integra</groupId>
-	<artifactId>api.autorizacao</artifactId>
+	<artifactId>integra-autorizacao</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>integra-autorizacao</name>
 	<description>API para Autorização</description>
