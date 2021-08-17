@@ -14,15 +14,15 @@ import org.springframework.web.filter.CorsFilter;
 public class CorsConfig {
 
 	@Bean
-	public FilterRegistrationBean<CorsFilter> corsFilterBean() {
+	public FilterRegistrationBean<CorsFilter> corsFilter() {
 		CorsConfiguration config = new CorsConfiguration();
 		config.setAllowCredentials(true);
-		config.setAllowedOrigins(Collections.singletonList("*"));
+		config.setAllowedOriginPatterns(Collections.singletonList("*"));
 		config.setAllowedMethods(Collections.singletonList("*"));
 		config.setAllowedHeaders(Collections.singletonList("*"));
 
 		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-		source.registerCorsConfiguration("/**", config);
+		source.registerCorsConfiguration("/oauth/token", config);
 
 		FilterRegistrationBean<CorsFilter> bean = new FilterRegistrationBean<>();
 		bean.setFilter(new CorsFilter(source));
@@ -32,3 +32,4 @@ public class CorsConfig {
 	}
 
 }
+
