@@ -44,9 +44,6 @@ public class Usuario {
 	@Column(name="senha")
 	private String senha;
 	
-	@Column(name="tipo")
-	private Integer tipo;
-	
 	@Column(name="data_criacao")
 	private Date dataDeCriacao;
 	
