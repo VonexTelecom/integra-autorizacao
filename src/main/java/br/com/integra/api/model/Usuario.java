@@ -13,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -48,6 +49,10 @@ public class Usuario {
 	
 	@Column(name="data_criacao")
 	private Date dataDeCriacao;
+	
+	@ManyToOne
+	@JoinColumn(name = "cliente_id", nullable = false)
+	private Cliente cliente;
 
 	@ManyToMany
 	@JoinTable(name = "Usuario_Grupo", joinColumns = @JoinColumn(name = "usuario_id"),
