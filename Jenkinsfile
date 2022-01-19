@@ -22,8 +22,8 @@ pipeline {
         }
         stage ('Run docker') {
             steps {
-                //sh ' docker stop integra-autorizacao' 
-                //sh ' docker rm integra-autorizacao'
+                sh ' docker stop integra-autorizacao' 
+                sh ' docker rm integra-autorizacao'
                 sh ' docker container run --network intranet -d --name integra-autorizacao -p 8082:8082 vonex/api_autorizacao:${BUILD_NUMBER}'
             }
         }        
