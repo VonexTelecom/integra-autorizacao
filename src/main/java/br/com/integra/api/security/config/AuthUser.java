@@ -16,6 +16,7 @@ private static final long serialVersionUID = 1L;
 	private String nome;
 	private String usuario;
 	private Long clienteId;
+	private Long id;
 	
 	public AuthUser(Usuario usuario, Collection<? extends GrantedAuthority> permissoes) {
 		super(usuario.getEmail(), usuario.getSenha(), permissoes);
@@ -23,6 +24,7 @@ private static final long serialVersionUID = 1L;
 		this.nome = usuario.getNome();
 		this.usuario = usuario.getUsuario();
 		this.clienteId = usuario.getCliente().getId();
+		this.id = usuario.getId();
 	}
 	
 }
