@@ -1,0 +1,8 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: integra-autorizacao
+  cloud:
+    config:
+      uri: http://integra-config-server:8088
