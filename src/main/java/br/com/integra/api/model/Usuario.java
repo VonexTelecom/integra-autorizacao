@@ -1,6 +1,7 @@
 package br.com.integra.api.model;
 
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -55,4 +56,7 @@ public class Usuario {
 	@JoinTable(name = "Usuario_Grupo", joinColumns = @JoinColumn(name = "usuario_id"),
 			inverseJoinColumns = @JoinColumn(name = "grupo_id"))
 	private Set<Grupo> grupos = new HashSet<>();
+	
+	private LocalDateTime ultimoLogin;
+
 }

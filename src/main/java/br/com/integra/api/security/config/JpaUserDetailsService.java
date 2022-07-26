@@ -1,5 +1,6 @@
 package br.com.integra.api.security.config;
 
+import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
@@ -22,13 +23,14 @@ public class JpaUserDetailsService implements UserDetailsService {
 	@Autowired
 	private UsuarioRepository usuarioRepository;
 	
-	@Transactional(readOnly = true)
+	@Transactional
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		
 		Usuario usuario = usuarioRepository.findByUsuario(username)
 				.orElseThrow(() -> new UsernameNotFoundException("Usuário não encontrado com e-mail informado"));
-		
+		usuario.setUltimoLogin(LocalDateTime.now());
+		usuarioRepository.save(usuario);;
 		return new AuthUser(usuario, getAuthorities(usuario));
 	
 	}
